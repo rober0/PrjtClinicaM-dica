@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healenth</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #ffffff;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        margin-right: 20px;
+      }
+
+      nav {
+        flex-grow: 1;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .cta {
+        margin-left: auto;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .btn {
+        background-color: #06a4c0;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .layout {
+        width: 100%;
+        display: grid;
+        grid:
+          "header"auto "main"1fr "footer"auto / 1fr;
+        gap: 8px;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .main {
+        grid-area: main;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <div class="container">
+        <header>
+          <div class="logo">
+            <img src="logo.png" alt="Healenth" width="120" style="vertical-align:middle">
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Sobre</a>
+              </li>
+              <li>
+                <a href="#">Serviços</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="cta">
+            <a href="login.html" class="btn">Entrar</a>
+            <a href="#" class="btn">Registrar</a>
+          </div>
+        </header>
+        <div class="main" style="text-align: left">
+          <h1>Agenda Médica Healenth</h1>
+          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera. 
+          </p>
+          <br>
+          <a href="#" class="btn">Agende sua consulta</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
