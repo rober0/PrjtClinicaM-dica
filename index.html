@@ -61,24 +61,20 @@
         font-weight: bold;
       }
 
-      .layout {
-        width: 100%;
+      body {
+        min-height: 100vh;
+        margin: 0;
         display: grid;
-        grid:
-          "header"auto "main"1fr "footer"auto / 1fr;
-        gap: 8px;
+        grid-template-rows: auto 1fr auto;
       }
 
-      .header {
-        grid-area: header;
+      header {
+        min-height: 50px;
       }
 
-      .main {
-        grid-area: main;
-      }
-
-      .footer {
-        grid-area: footer;
+      footer {
+        min-height: 50px;
+        background-color: #06a4c0;
       }
 
       .container {
@@ -113,14 +109,14 @@
           </div>
         </header>
         <div class="main" style="text-align: left">
-          <h1>Agenda Médica Healenth</h1>
-          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera. 
-          </p>
+          <h1 style="font-size:60px">Healenth</h1>
+          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera. </p>
           <br>
           <a href="#" class="btn">Agende sua consulta</a>
-          <p>Teste</p>
         </div>
       </div>
     </section>
+    <br>
+    <footer contentEditable>Footer</footer>
   </body>
 </html>
