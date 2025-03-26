@@ -8,7 +8,9 @@
       body {
         font-family: sans-serif;
         margin: 0;
-        padding: 0;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
       }
 
       header {
@@ -16,21 +18,19 @@
         padding: 20px;
         display: flex;
         align-items: center;
+        min-height: 50px;
       }
 
-      .logo {
+      .logo img {
         margin-right: 20px;
-      }
-
-      nav {
-        flex-grow: 1;
+        vertical-align: middle;
       }
 
       nav ul {
         list-style: none;
-        padding: 0;
-        margin: 0;
         display: flex;
+        margin: 0;
+        padding: 0;
       }
 
       nav li {
@@ -47,11 +47,6 @@
         margin-left: auto;
       }
 
-      .hero {
-        text-align: center;
-        padding: 100px 20px;
-      }
-
       .btn {
         background-color: #06a4c0;
         color: #fff;
@@ -61,20 +56,19 @@
         font-weight: bold;
       }
 
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
+      .main {
+        text-align: left;
+        padding: 20px;
       }
 
-      header {
-        min-height: 50px;
+      .main h1 {
+        font-size: 60px;
       }
 
       footer {
-        min-height: 50px;
         background-color: #06a4c0;
+        padding: 10px 0;
+        display: flex;
       }
 
       .container {
@@ -88,19 +82,13 @@
       <div class="container">
         <header>
           <div class="logo">
-            <img src="logo.png" alt="Healenth" width="120" style="vertical-align:middle">
+            <img src="logo.png" alt="Healenth" width="120">
           </div>
           <nav>
             <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Sobre</a>
-              </li>
-              <li>
-                <a href="#">Serviços</a>
-              </li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Serviços</a></li>
             </ul>
           </nav>
           <div class="cta">
@@ -108,22 +96,18 @@
             <a href="#" class="btn">Registrar</a>
           </div>
         </header>
-        <div class="main" style="text-align: left">
-          <h1 style="font-size:60px">Healenth</h1>
-          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera. </p>
+        <div class="main">
+          <h1>Agenda Healenth</h1>
+          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera.</p>
           <br>
-          <a href="#" class="btn">Agende sua consulta</a>
+          <a href="login.html" class="btn">Agende sua consulta</a>
         </div>
       </div>
     </section>
     <br>
     <footer>
       <div class="container">
-        <div class="footer2">
-          <h1>Teste</h1>
-          <p>AAAA</p>
-          <p>AAAA</p>
-        </div>
+        <p style="color: #ffffff;">&copy; 2024 Healenth. Todos os direitos reservados.</p>
       </div>
     </footer>
   </body>
