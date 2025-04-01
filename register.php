@@ -1,0 +1,116 @@
+<?php
+include 'database\db_connect.php';
+
+$message = "";
+$toastClass = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Check if email already exists
+    $checkEmailStmt = $conn->prepare("SELECT email FROM userdata WHERE email = ?");
+    $checkEmailStmt->bind_param("s", $email);
+    $checkEmailStmt->execute();
+    $checkEmailStmt->store_result();
+
+    if ($checkEmailStmt->num_rows > 0) {
+        $message = "Email ID already exists";
+        $toastClass = "#007bff"; // Primary color
+    } else {
+        // Prepare and bind
+        $stmt = $conn->prepare("INSERT INTO userdata (username, email, password) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $email, $password);
+
+        if ($stmt->execute()) {
+            $message = "Account created successfully";
+            $toastClass = "#28a745"; // Success color
+        } else {
+            $message = "Error: " . $stmt->error;
+            $toastClass = "#dc3545"; // Danger color
+        }
+
+        $stmt->close();
+    }
+
+    $checkEmailStmt->close();
+    $conn->close();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healenth</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.2.0/mdb.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .card {
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .form-control {
+        font-size: 1rem;
+        padding: 0.25rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="border-radius: 1rem;">
+        <div class="row g-0">
+          <div class="col-md-6 col-lg-7 d-flex align-items-center">
+            <div class="card-body p-4 p-lg-5 text-black">
+              <form>
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                <div>
+                  <label class="form-label" for="nome">Nome</label>
+                  <input type="text" id="nome" class="form-control form-control-lg" />
+                </div>
+                <br>
+                <div>
+                  <label class="form-label" for="sobrenome">Sobrenome</label>
+                  <input type="text" id="sobrenome" class="form-control form-control-lg" />
+                </div>
+                <br>
+                <div>
+                  <label class="form-label" for="email">Email</label>
+                  <input type="email" id="email" class="form-control form-control-lg" />
+                </div>
+                <br>
+                <div>
+                  <label class="form-label" for="senha">Senha</label>
+                  <input type="password" id="senha" class="form-control form-control-lg" />
+                </div>
+                <br>
+                <div class="pt-1 mb-4">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Enviar" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
