@@ -65,11 +65,7 @@
         font-size: 60px;
       }
 
-      footer {
-        background-color: #06a4c0;
-        padding: 10px 0;
-        display: flex;
-      }
+
 
       .container {
         max-width: 1200px;
@@ -154,6 +150,39 @@
   margin-left: 50px;
   border-radius: 10px;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #06a4c0;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -193,10 +222,22 @@
       </div>
     </section>
     <br>
-    <footer>
-      <div class="container">
-        <p style="color: #ffffff;">&copy; 2024 Healenth. Todos os direitos reservados.</p>
+    <footer class="footer">
+      <div class="footer-content">
+          <nav class="footer-nav">
+              <a href="index.html">Home</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#contato">Contato</a>
+              <a href="#privacidade">Política de Privacidade</a>
+          </nav>
+          <nav class="footer-nav">
+            <a href="">Healenth@gmail.com</a>
+            <a href="">+55(55)5555-5555</a>
+            <a href="">+55(00)0000-0000</a>
+          </nav>
+          <br>
+          <p style="color: #ffffff;">&copy; 2024 Healenth. Todos os direitos reservados.</p>
       </div>
-</footer>
+  </footer>
 </body>
 </html>

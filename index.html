@@ -94,7 +94,6 @@
   margin: 0;
 }
 
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -124,6 +123,59 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.examdiv{
+  align-items: center;
+  display: flex;
+  min-width: 100%;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.examtext{
+  max-width: 40%;
+  font-weight: normal;
+}
+
+.examimg{
+  max-width: 50%;
+  text-align: right;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #06a4c0;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
     </style>
   </head>
   <body>
@@ -151,18 +203,34 @@
           </div>
         </header>
         <div class="main">
+    <div class="examdiv">
+        <div class="bord">
           <h1>Agenda Healenth</h1>
-          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera.</p>
+          <p>A agenda médica do Healenth permite uma organização <br> mais eficiente dos atendimentos em sua clínica ou consultório, <br> otimizando os horários, automatizando consultas com os pacientes <br> e até mesmo definindo uma fila de espera.</p>         
           <br>
           <a href="login.php" class="btn">Agende sua consulta</a>
+        </div>
+        <img src="https://imgs.jusbr.com/publications/images/3a8fa44de08d0583f0b6aa8ef70dbbee" class="examimg">
+    </div>
+        </div>
         </div>
       </div>
     </section>
     <br>
-    <footer>
-      <div class="container">
-        <p style="color: #ffffff;">&copy; 2024 Healenth. Todos os direitos reservados.</p>
+    <footer class="footer">
+      <div class="footer-content">
+          <nav class="footer-nav">
+              <a href="index.html">Home</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#contato">Contato</a>
+              <a href="#privacidade">Política de Privacidade</a>
+          </nav>
+          <nav class="footer-nav">
+            <a href="">Healenth@gmail.com</a>
+            <a href="">+55(55)5555-5555</a>
+            <a href="">+55(00)0000-0000</a>
+          </nav>
+          <p style="color: #ffffff;">&copy; 2024 Healenth. Todos os direitos reservados.</p>
       </div>
-    </footer>
   </body>
 </html>

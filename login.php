@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
       if($row['ocupacao'] == 'medico'){
 
          $_SESSION['medico_name'] = $row['username'];
-         header('location:medicodash.php');
+         header('location:medicodash.html');
 
       }elseif($row['ocupacao'] == 'paciente'){
 
