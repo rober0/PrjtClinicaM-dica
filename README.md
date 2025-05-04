@@ -1,6 +1,6 @@
-# Healenth
+# User Register
 
-Um simples projeto de TCC feito no Django para realizar consultas médicas.
+Um simples projeto feito no PHP para realizar Login e Cadastro.
 
 ```
 git clone
